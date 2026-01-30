@@ -4,3 +4,25 @@
 
 expo-env.d.ts
 # @end expo-cli
+# dependencies
+node_modules/
+
+# expo
+.expo/
+.expo-shared/
+
+# build
+dist/
+web-build/
+
+# env
+.env
+.env.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
