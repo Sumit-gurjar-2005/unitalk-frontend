@@ -1,5 +1,5 @@
 import { useState } from "react";
-import API_BASE_URL from "../src/config/api";
+import BASE_URL from "../src/config/api";
 
 import {
   View,
@@ -22,7 +22,7 @@ export default function EmailScreen() {
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const sendOtpHandler = async () => {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/auth/send-otp`, {
+      const res = await fetch(`${BASE_URL}/api/auth/send-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

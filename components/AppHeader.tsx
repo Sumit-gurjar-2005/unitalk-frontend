@@ -146,7 +146,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
-type TabType = "home" | "request" | "friends";
+type TabType = "home" | "request" | "friends" | "settings";
 
 export default function AppHeader({ activeTab }: { activeTab: TabType }) {
   const router = useRouter();

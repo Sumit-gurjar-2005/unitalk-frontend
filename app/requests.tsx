@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AppHeader from "../components/AppHeader";
+import BASE_URL from "../src/config/api";
+
 
 
 export default function Requests() {
@@ -21,7 +23,7 @@ export default function Requests() {
   const fetchRequests = async () => {
     const token = await AsyncStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/api/requests", {
+    const res = await fetch(`${BASE_URL}/api/requests`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -34,7 +36,7 @@ export default function Requests() {
   const acceptRequest = async (userId: string) => {
     const token = await AsyncStorage.getItem("token");
 
-    await fetch("http://localhost:5000/api/requests/accept", {
+    await fetch(`${BASE_URL}/api/requests/accept`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +51,7 @@ export default function Requests() {
   const rejectRequest = async (userId: string) => {
     const token = await AsyncStorage.getItem("token");
 
-    await fetch("http://localhost:5000/api/requests/reject", {
+    await fetch(`${BASE_URL}/api/requests/reject`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import AppHeader from "../components/AppHeader";
 import { Ionicons } from "@expo/vector-icons";
-import API_BASE_URL from "../src/config/api";
+import BASE_URL from "../src/config/api";
 
 
 interface User {
@@ -46,7 +46,7 @@ const handleLogout = async () => {
     const token = await AsyncStorage.getItem("token");
 
     if (token) {
-      await fetch("http://localhost:5000/api/logout", {
+      await fetch(`${BASE_URL}/api/logout`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -88,7 +88,7 @@ const logout = () => {
 
     return (
         <View style={styles.container}>
-            {/* <AppHeader activeTab="settings" /> */}
+            <AppHeader activeTab="settings" />
 
             {/* PROFILE CARD */}
             <Image

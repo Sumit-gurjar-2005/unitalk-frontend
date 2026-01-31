@@ -11,7 +11,7 @@ import {
   Alert,
 } from "react-native";
 import { useRouter, useLocalSearchParams } from "expo-router";
-import API_BASE_URL from "../src/config/api";
+import BASE_URL from "../src/config/api";
 
 const defaultAvatar = require("../assets/logo.png");
 
@@ -34,7 +34,7 @@ export default function SignupScreen() {
     try {
       setLoading(true);
 
-      const res = await fetch(`${API_BASE_URL}/api/auth/complete-signup`, {
+      const res = await fetch(`${BASE_URL}/api/auth/complete-signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,6 +17,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { io, Socket } from "socket.io-client";
 import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
+import BASE_URL from "../src/config/api";
+
 
 
 /* ===============================
@@ -36,7 +38,6 @@ interface Friend {
   profilePic?: string;
 }
 
-const BASE_URL = "http://localhost:5000";
 
 export default function PrivateChat() {
   const { friendId } = useLocalSearchParams<{ friendId: string }>();

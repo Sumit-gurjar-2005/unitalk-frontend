@@ -11,7 +11,7 @@ import {
   Alert,
 } from "react-native";
 import { useRouter } from "expo-router";
-import API_BASE_URL from "../src/config/api";
+import BASE_URL from "../src/config/api";
 const logo = require("../assets/logo.png");
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -30,7 +30,7 @@ export default function LoginScreen() {
     try {
       setLoading(true);
 
-      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+      const res = await fetch(`${BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

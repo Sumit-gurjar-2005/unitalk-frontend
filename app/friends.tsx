@@ -169,8 +169,8 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AppHeader from "../components/AppHeader";
 import { useRouter } from "expo-router";
+import BASE_URL from "../src/config/api";
 
-const BASE_URL = "http://localhost:5000";
 
 export default function FriendsScreen() {
   const router = useRouter();

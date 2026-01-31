@@ -1,7 +1,7 @@
 import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import { useState } from "react";
-import API_BASE_URL from "../src/config/api";
+import BASE_URL from "../src/config/api";
 
 export default function OtpScreen() {
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function OtpScreen() {
     try {
       setLoading(true);
 
-      const res = await fetch(`${API_BASE_URL}/api/auth/verify-otp`, {
+      const res = await fetch(`${BASE_URL}/api/auth/verify-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

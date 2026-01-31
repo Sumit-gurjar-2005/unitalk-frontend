@@ -429,8 +429,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { io, Socket } from "socket.io-client";
 import { Ionicons } from "@expo/vector-icons";
 import AppHeader from "../components/AppHeader";
+import BASE_URL from "../src/config/api";
 
-const SOCKET_URL = "http://localhost:5000";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -446,7 +446,7 @@ export default function HomeScreen() {
         return;
       }
 
-      const socket = io(SOCKET_URL, {
+      const socket = io(BASE_URL, {
         auth: { token },
         transports: ["websocket"],
       });
